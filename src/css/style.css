@@ -1,0 +1,29 @@
+#game-container {
+  width: 400px;
+  margin: 100px auto;
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#game-container button {
+  color: black;
+  margin-left: 5px;
+}
+
+#game-container input {
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+#message {
+  font-style: italic;
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
