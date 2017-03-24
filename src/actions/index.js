@@ -17,32 +17,17 @@ const newGame = (newGame) => {
 }
 
 const GET_FEWEST_GUESSES = 'GET_FEWEST_GUESSES';
-// const getFewestGuesses = (fewestGuesses) => {
-//   return {
-//     type: GET_FEWEST_GUESSES,
-//     fewestGuesses: fewestGuesses
-//   }
-// }
-
-// const NEW_FEWEST_GUESSES = 'NEW_FEWEST_GUESSES';
-// const newFewestGuesses = (guess) => {
-//   return {
-//     type: NEW_FEWEST_GUESSES,
-//     fewestGuesses: updateGuess
-//   }
-// }
-
-const POST_FEWEST_GUESSES = 'POST_FEWEST_GUESSES';
 
 export function guessNum (guessNum) {
   const url = 'http://localhost:8080/fewest-guesses';
-  let request = axios.get(url);
-
-  return {
-    type: GET_FEWEST_GUESSES,
-    payload: request
-  }
+  let request = axios.get(url)
+    return {
+      type: GET_FEWEST_GUESSES,
+      payload: request
+    }
 }
+
+const POST_FEWEST_GUESSES = 'POST_FEWEST_GUESSES';
 
 export function postCount (count) {
   const url = 'http://localhost:8080/fewest-guesses';
@@ -53,6 +38,8 @@ export function postCount (count) {
     payload: request
   }
 }
+
+// create new action that handles 2 reducers
 
 
 exports.GUESS_NUMBER = GUESS_NUMBER;

@@ -23,34 +23,28 @@ class GameResults extends Component {
   // }
 
   render() {
-    // create an array with a new li for each guess
-    let guesses = this.props.guesses.map((guess, index) => {
-      return <li key={index}>{guess}</li>
-    })
 
+    let guesses = this.props.guesses.join(', ')
     let resetGame = null;
-
 
     if (this.props.correct === true) {
 
       if (this.props.counter < this.props.fewest) {
         this.props.postCount(this.props.counter)
-        resetGame = <button onClick={this.resetAll}>Reset Game</button>
       }
 
-      else {
-        resetGame = <button onClick={this.resetAll}>Reset Game</button>
-      }
+      resetGame = <button id='reset' onClick={this.resetAll}>Reset Game</button>
 
     }
     
 
     return (
       <div>
+        <div id='message'>{this.props.message || 'Start Guessing...'}</div>
         {resetGame}
-        <div id='message'>{this.props.message || 'Start Guessing'}</div>
-        <div id='guesses'>Guesses: 
-          <ul>{guesses}</ul>
+        <div id='guess-box'>
+          <div>Your Guesses:</div> 
+          <div id='user-guesses'>{guesses}</div>
         </div>
         <FewestGuesses />
         <div id='guess-count'>Guess Count: {this.props.counter}</div>

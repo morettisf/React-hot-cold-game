@@ -8,31 +8,28 @@ export class GameInput extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { guess: '' };
-
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onInputChange(event) {
-    this.setState({ guess: event.target.value });
   }
 
   onFormSubmit(event) {
     event.preventDefault();
-    this.props.guessNumber(this.state.guess);
-    this.setState({ guess: '' });
+    const number = event.target.number.value
+    this.props.guessNumber(number);
+    event.target.number.value = '';
   }
 
   render() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input 
+        <input name='number'
           type='text' 
-          value={this.state.guess} 
           onChange={this.onInputChange}
-          placeholder='Your guess here' />
-        <button type='submit'>Submit</button>
+          placeholder='#' />
+        <button id='submit' type='submit'>Submit</button>
       </form>
     );
   }

@@ -15,6 +15,7 @@ let initialState = {
 
 export default function(state, action) {
   state = state || initialState;
+  let fewest = null;
 
   switch (action.type) {
     case GUESS_NUMBER:
@@ -23,37 +24,30 @@ export default function(state, action) {
 
       let guessNum = parseInt(action.number);
 
-      state.counter = state.counter + 1;
-      state.guesses.push(action.number)
-
       // logic for providing hot/cold message based on input number
       if (guessNum === state.randomNum) {
-        state.correct = true;
-        state.message = 'You win!'
+        return Object.assign({}, state, { correct: true, message: 'You win!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
       else if (state.randomNum - 5 <= guessNum && guessNum <= state.randomNum + 5) {
-        state.correct = false;
-        state.message = 'Hot!'
+        return Object.assign({}, state, { correct: false, message: 'Hot!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
       else if (state.randomNum - 15 <= guessNum && guessNum <= state.randomNum + 15) {
-        state.correct = false;
-        state.message = 'Warm!'
+        return Object.assign({}, state, { correct: false, message: 'Warm!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
       else if (state.randomNum - 25 <= guessNum && guessNum <= state.randomNum + 25) {
-        state.correct = false;
-        state.message = 'Luke Warm...'
+        return Object.assign({}, state, { correct: false, message: 'Luke Warm...', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
+      }
+
+      else if (isNaN(guessNum)) {
+        return Object.assign({}, state, { correct: false, message: 'Try a number...' });
       }
 
       else {
-        state.correct = false;
-        state.message = 'Cold!'
+        return Object.assign({}, state, { correct: false, message: 'Cold!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
-
-      return Object.assign({}, state);
-      break
 
     case NEW_GAME:
 
@@ -68,34 +62,27 @@ export default function(state, action) {
         }
         return newGame;
       }
-      break
 
     case GET_FEWEST_GUESSES:
-
       action.payload
         .then((res) => {
-
-          let fewest = res.data.fewestGuesses;
-          state.fewest = fewest
-          return Object.assign({}, state);
+          let fewest = res.data.fewestGuesses
+          return Object.assign({}, state, { fewest: fewest });
         })
         .catch((err) => {
           // console.log('axios: ', err)
         })
-      break
 
     case POST_FEWEST_GUESSES:
 
       action.payload
         .then((res) => {
           let fewest = res.data.fewestGuesses;
-          state.fewest = fewest
-          // return Object.assign({}, state);
+          return Object.assign({}, state, { fewest: fewest });
         })
         .catch((err) => {
           // console.log('axios: ', err)
         })
-      break
   }
 
   return state;
