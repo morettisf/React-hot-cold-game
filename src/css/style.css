@@ -88,6 +88,10 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
+#guess-count {
+  margin-top: 20px;
+}
+
 #user-guesses {
   margin-top: 10px;
 }
@@ -134,8 +138,5 @@ li {
   #main-content {
     margin-top: 250px;
   }
-
-
-
 
 }
