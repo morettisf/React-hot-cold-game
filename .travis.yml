@@ -4,6 +4,6 @@ deploy:
   provider: heroku
   api_key:
     secure: ej85VTHX7lBa8LDcfuwOqh96zRe/rfFi8HeSPgR/pIx1WR7YztoVKzGrsMdliBc/qGUKpGVlTAg9gsm658pArOfboi8rVbiPao1qCs33XZrVY/W+9SsIw97xel96l+WAo+vsU7YdBd/nk6mgFjUcRBnVVOlbdeLJLgYBQiI5admUIWShFbJBqfYFp891B5eNRg7i5pubKVyEfSi2AnO+K3MAVX9N/ka4/qCeN7kfoCUCnRHamnV5yOT4L76gyhLVyymay9mbvkS5/rQkqeg6eXqV750/8oaYE336xr45KK3KTB9vXiemPlbCoeHdztjKfIPhBVMEDWtfinXdSWz+aW71MV30pjKijAMTH+EB9dtAYi4j5XIyweVRcZHlknOA7xgS04Tgpg6dDMjXqsgtnFTN4ORi4pAvohhjp7oLcASb/jC7NozgH5yiRcFfK46mmdnUDsEDfDlhyD1WUuUjBBB1sONZR5Ue+PZLmcmLUPhQLfuufS9DOXIcBNMp70n9TQ2s9WkK9G3R5RmVltSsTLJrCx5oRxIo1PeT6HZuKRUmujcFAPmrWYh4r7n/hrinqyuZdhZs+6eWIjge8xCdSI4kTtryBHckwvF3EbkX/m6Qs+Y59BMlYNVQMOcoJtDUN8pdxCeyTabXs7eyIChWZ2I+OPlNYzdKiX8+CydEdI8=
-  app: react-hot-cold-game
+  app: hot-cold-game
   on:
     repo: morettisf/react-hot-cold-game
