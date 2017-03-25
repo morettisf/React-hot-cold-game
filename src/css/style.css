@@ -71,11 +71,12 @@ h1, h2 {
 #game-container input {
   -webkit-appearance: none;
   color: white;
-  width: 50px;
+  width: 70px;
   height: 65px;
   font-size: 2.5em;
   background-color: transparent;
   border: 2px solid white;
+  text-align: center;
 }
 
 #fewest-guess {
