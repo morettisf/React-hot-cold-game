@@ -10,7 +10,7 @@ let initialState = {
   counter: 0,
   message: '',
   correct: false,
-  fewest: 0
+  fewest: null
 }
 
 export default function(state, action) {
@@ -67,7 +67,7 @@ export default function(state, action) {
       action.payload
         .then((res) => {
           let fewest = res.data.fewestGuesses
-          return Object.assign({}, state, { fewest: fewest });
+          return Object.assign(state, { fewest: fewest });
         })
         .catch((err) => {
           // console.log('axios: ', err)
@@ -78,7 +78,7 @@ export default function(state, action) {
       action.payload
         .then((res) => {
           let fewest = res.data.fewestGuesses;
-          return Object.assign({}, state, { fewest: fewest });
+          return Object.assign(state, { fewest: fewest });
         })
         .catch((err) => {
           // console.log('axios: ', err)

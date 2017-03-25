@@ -54,7 +54,6 @@ class GameResults extends Component {
 }
 
 function mapStateToProps(state, props) {
-console.log(state)
   return {
     counter: state.counter,
     guesses: state.guesses,

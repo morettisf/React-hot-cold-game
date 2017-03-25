@@ -6,8 +6,9 @@ import { guessNum } from '../actions/index';
 
 
 export class FewestGuesses extends Component {
-  componentDidMount(event) {
-    this.props.guessNum();
+
+  componentDidMount() {
+    this.props.guessNum()
   }
 
   render() {
@@ -18,6 +19,7 @@ export class FewestGuesses extends Component {
 }
 
 function mapStateToProps(state, props) {
+    console.log(state)
   return {
     fewest: state.fewest
   };

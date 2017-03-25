@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 app.use([bodyParser.urlencoded({ extended: true }), bodyParser.json()]);
 app.use(express.static('src'));
 
-let fewestGuesses = 20;
+let fewestGuesses = 8;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -16,7 +16,6 @@ app.get('/fewest-guesses', (req, res) => {
 });
 
 app.post('/fewest-guesses', (req, res) => {
-  console.log('getting post')
   let newCount = req.body.count;
   fewestGuesses = newCount;
   res.json({ fewestGuesses });
