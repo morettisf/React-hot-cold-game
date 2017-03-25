@@ -4,8 +4,10 @@ module.exports = {
   ],
   output: {
     path: __dirname + '/src/build',
+    publicPath: '/',
     filename: 'bundle.js'
   },
+  devtool: 'source-map',
   module: {
     loaders: [{
       exclude: /node_modules/,
