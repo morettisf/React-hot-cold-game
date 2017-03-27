@@ -1,9 +1,8 @@
 {
-  "name": "redux-simple-starter",
+  "name": "Hot-Cold-Game",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Game built with React and Redux",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
     "babel-node": "babel-node",
     "start": "webpack && npm run babel-node -- server.js",

@@ -2,7 +2,7 @@ html {
   height: 100%;
   background: linear-gradient(to bottom, #398235 0%,#8ab66b 75%,#c9de96 100%);
   color: white;
-  font-family: arial;
+  font-family: verdana;
 }
 
 #main-content {

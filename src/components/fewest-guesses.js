@@ -19,7 +19,7 @@ export class FewestGuesses extends Component {
 }
 
 function mapStateToProps(state, props) {
-    console.log(state)
+
   return {
     fewest: state.fewest
   };

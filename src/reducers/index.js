@@ -19,8 +19,6 @@ export default function(state, action) {
 
   switch (action.type) {
     case GUESS_NUMBER:
-      // console.log('state is:', state)
-      // console.log('action is:', action)
 
       let guessNum = parseInt(action.number);
 
@@ -70,7 +68,7 @@ export default function(state, action) {
           return Object.assign(state, { fewest: fewest });
         })
         .catch((err) => {
-          // console.log('axios: ', err)
+          console.log('axios: ', err)
         })
 
     case POST_FEWEST_GUESSES:
@@ -81,7 +79,7 @@ export default function(state, action) {
           return Object.assign(state, { fewest: fewest });
         })
         .catch((err) => {
-          // console.log('axios: ', err)
+          console.log('axios: ', err)
         })
   }
 

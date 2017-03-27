@@ -18,10 +18,6 @@ class GameResults extends Component {
     this.props.newGame(true)
   }
 
-  // postFewest(newCount) {
-  //   postCount(newCount)
-  // }
-
   render() {
 
     let guesses = this.props.guesses.join(', ')
