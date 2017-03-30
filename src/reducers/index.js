@@ -15,7 +15,6 @@ let initialState = {
 
 export default function(state, action) {
   state = state || initialState;
-  let fewest = null;
 
   switch (action.type) {
     case GUESS_NUMBER:
@@ -50,29 +49,10 @@ export default function(state, action) {
     case NEW_GAME:
 
       if (action.newGame === true) {
-        let newGame = {
-          randomNum: Math.floor(Math.random() * 100) + 1,
-          guesses: [],
-          counter: 0,
-          message: '',
-          correct: false,
-          fewest: state.fewest
-        }
-        return newGame;
+        return Object.assign({}, state, { randomNum: Math.floor(Math.random() * 100) + 1, guesses: [], counter: 0, message: '', correct: false, fewest: null });
       }
 
     case GET_FEWEST_GUESSES:
-      action.payload
-        .then((res) => {
-          let fewest = res.data.fewestGuesses
-          return Object.assign(state, { fewest: fewest });
-        })
-        .catch((err) => {
-          console.log('axios: ', err)
-        })
-
-    case POST_FEWEST_GUESSES:
-
       action.payload
         .then((res) => {
           let fewest = res.data.fewestGuesses;

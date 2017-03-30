@@ -80,7 +80,7 @@ h1, h2 {
 }
 
 #fewest-guess {
-  clear: both;
+  margin-top: 20px;
 }
 
 #guess-box {
@@ -88,23 +88,8 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
-#guess-count {
-  margin-top: 20px;
-}
-
 #user-guesses {
   margin-top: 10px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0px;
-  float: left;
-}
-
-li {
-  float: left;
-  margin-left: 15px;
 }
 
 #message {
