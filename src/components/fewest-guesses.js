@@ -5,7 +5,7 @@ import { getFewestGuesses } from '../actions/index';
 import { guessNum } from '../actions/index';
 
 
-export class FewestGuesses extends Component {
+class FewestGuesses extends Component {
 
   componentDidMount() {
     this.props.guessNum();
