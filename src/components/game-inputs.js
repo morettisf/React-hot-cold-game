@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { guessNumber } from '../actions/index';
 
-class GameInput extends Component {
+export class GameInput extends Component {
 
   constructor(props) {
     super(props);
