@@ -5,22 +5,27 @@ import { POST_FEWEST_GUESSES } from '../actions/index';
 import React, { Component } from 'react';
 
 
-function fireBounce() {
+function bounce(character) {
+
   const fire = document.querySelector('#fire-wrapper');
-  fire.classList.add('bounce');
-
-  setTimeout(() => {
-    fire.classList.remove('bounce');
-  }, 1000)
-}
-
-function iceBounce() {
   const ice = document.querySelector('#ice-wrapper');
-  ice.classList.add('bounce');
 
-  setTimeout(() => {
-    ice.classList.remove('bounce');
-  }, 1000)
+  if (character === 'fire') {
+    fire.classList.add('bounce-right');
+
+    setTimeout(() => {
+      fire.classList.remove('bounce-right');
+    }, 1000)
+  }
+
+  else {
+    ice.classList.add('bounce-left');
+
+    setTimeout(() => {
+      ice.classList.remove('bounce-left');
+    }, 1000)
+  }
+
 }
 
 
@@ -47,27 +52,26 @@ export default function(state, action) {
       }
 
       else if (state.randomNum - 5 <= guessNum && guessNum <= state.randomNum + 5) {
-        fireBounce();
+        bounce('fire');
         return Object.assign({}, state, { correct: false, message: 'Hot!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
       else if (state.randomNum - 15 <= guessNum && guessNum <= state.randomNum + 15) {
-        fireBounce();
+        bounce('fire');
         return Object.assign({}, state, { correct: false, message: 'Warm!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
       else if (state.randomNum - 25 <= guessNum && guessNum <= state.randomNum + 25) {
-        fireBounce();
+        bounce('fire');
         return Object.assign({}, state, { correct: false, message: 'Luke Warm...', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
       else if (isNaN(guessNum)) {
-
         return Object.assign({}, state, { correct: false, message: 'Try a number...' });
       }
 
       else {
-        iceBounce();
+        bounce('ice');
         return Object.assign({}, state, { correct: false, message: 'Cold!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 

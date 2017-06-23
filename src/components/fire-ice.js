@@ -40,17 +40,18 @@ class FireAndIce extends Component {
 
   animate2() {
     this.setState({ 
-      fireAnimate: 'fire-move-in bounce'
+      fireAnimate: 'fire-move-in bounce-right'
     });
   }
 
   animate3() {
     this.setState({ 
-      iceAnimate: 'ice-move-in bounce'
+      iceAnimate: 'ice-move-in bounce-left'
     });
 
     setTimeout(() => {
       this.setState({ 
+        fireAnimate: 'fire-move-in',
         iceAnimate: 'ice-move-in'
       });
     }, 1000)
@@ -59,7 +60,7 @@ class FireAndIce extends Component {
 
   render() {
     return (
-      <div>
+      <div id='characters-wrapper'>
         <div id='fire-wrapper' className={this.state.fireAnimate} >
           <img src='../images/fire.svg' />
         </div>

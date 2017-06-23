@@ -32,7 +32,7 @@ class App extends Component {
       <div id='app' className={this.background(this.props.message)}>
         <FireAndIce wait={50} />
         <Header wait={1000} />
-        <GameContainer wait={1100} />
+        <GameContainer wait={1300} />
       </div>
     );
   }
