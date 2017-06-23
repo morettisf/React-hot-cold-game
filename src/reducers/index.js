@@ -9,6 +9,13 @@ function bounce(character) {
 
   const fire = document.querySelector('#fire-wrapper');
   const ice = document.querySelector('#ice-wrapper');
+  const message = document.querySelector('#message');
+
+  message.classList.add('shake');
+
+  setTimeout(() => {
+    message.classList.remove('shake');
+  }, 200)
 
   if (character === 'fire') {
     fire.classList.add('bounce-right');
@@ -86,9 +93,6 @@ export default function(state, action) {
         .then((res) => {
           let fewest = res.data.fewestGuesses;
           return Object.assign(state, { fewest: fewest });
-        })
-        .catch((err) => {
-          console.log('axios: ', err)
         })
   }
 

@@ -11,23 +11,9 @@ class FewestGuesses extends Component {
     this.props.guessNum();
   }
 
-  displayIf(fewest) {
-    if (fewest !== null) {
-      return (
-        <div id='fewest-guess'>Fewest Guesses: {this.props.fewest}</div>
-      )
-    }
-
-    else {
-      return <div id='fewest-guess'></div>
-    }
-  }
-
   render() {
-    this.props.guessNum();
-
     return (
-      <div>{this.displayIf(this.props.fewest)}</div>
+      <div id='fewest-guess'>Fewest Guesses: {this.props.fewest}</div>
     )
   }
 }
@@ -43,5 +29,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ guessNum }, dispatch);
 }
 
-// export default connect(null, mapDispatchToProps)(FewestGuesses);
 export default connect(mapStateToProps, mapDispatchToProps)(FewestGuesses);

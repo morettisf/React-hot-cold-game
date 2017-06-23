@@ -49,11 +49,12 @@ class GameResults extends Component {
         <div id='message'>{this.props.message || 'Start Guessing...'}</div>
         {resetGame}
         <div id='guess-box'>
-          <div>Your Guesses:</div> 
-          <div id='user-guesses'>{guesses}</div>
+          <div>Your Guesses: 
+            <div id='user-guesses'>{guesses}</div>
+          </div>
+          <div id='guess-count'>Guess Count: {this.props.counter}</div>
+          <FewestGuesses />
         </div>
-        <div id='guess-count'>Guess Count: {this.props.counter}</div>
-        <FewestGuesses />
       </div>
     );
   }

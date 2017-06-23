@@ -8,13 +8,17 @@ html, body {
 #container {
   background: linear-gradient(to bottom right, #ff6666 30%, deepskyblue);
   min-height: 100%;
-  box-sizing: border-box;
 }
 
 #app {
-  overflow: hidden;
   min-height: 100vh;
+}
+
+#game {
+  max-width: 1000px;
   transition: background .6s ease;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -33,7 +37,6 @@ form {
 
 #characters-wrapper {
   position: relative;
-  margin-top: 5%;
 }
 
 #fire-wrapper {
@@ -42,6 +45,7 @@ form {
   width: 20%;
   left: -20%;
   top: 0;
+  padding-top: 2%;
 }
 
 .fire-move-in {
@@ -55,6 +59,7 @@ form {
   width: 20%;
   right: -20%;
   top: 0;
+  padding-top: 2%;
 }
 
 .ice-move-in {
@@ -90,6 +95,21 @@ form {
   100% {transform: translateY(0);} 
 } 
 
+.shake {
+  position: relative;
+  animation: shake .1s linear;
+  animation-iteration-count: 3;
+  transform: scale(1.3);
+  transition: all .2s linear;
+}
+
+@keyframes shake {
+  0% {transform: rotate(15deg);}
+  25% {top: -2px;}
+  50% {transform: rotate(-25deg);}
+  100% { bottom: -2px;}
+}
+
 img {
   width: 100%;
 }
@@ -105,7 +125,6 @@ img {
 }
 
 #header {
-/*  margin-top: 140px;*/
   opacity: 0;
   transform: scale(1.2);
   transition: all .6s ease;
@@ -140,6 +159,11 @@ h1, h2 {
   transform: translateY(-15%);
 }
 
+#submit:hover {
+  background-color: rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
 #reset {
   color: black;
   margin-top: 10px;
@@ -161,17 +185,25 @@ h1, h2 {
   text-align: center;
 }
 
-#fewest-guess {
-  margin-top: 20px;
+#guess-count, #fewest-guess {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #guess-box {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  padding: 20px;
+  transition: max-height 2s ease;
 }
 
 #user-guesses {
   margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 20px;
 }
 
 #message {
@@ -179,8 +211,8 @@ h1, h2 {
   font-family: 'Russo One', sans-serif;
   letter-spacing: 1px;
   font-size: 1.5em;
+  margin-bottom: 25px;
   margin-top: 25px;
-  margin-bottom: 10px;
   text-shadow: 2px 2px #000000;
 }
 
@@ -197,6 +229,30 @@ h1, h2 {
 
   h2 {
     font-size: 1.8em;
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  #fire-wrapper {
+    max-width: 250px;
+    left: -250px;
+  }
+
+  .fire-move-in {
+    left: 50% !important;
+    margin-left: -270px;
+  }
+
+  #ice-wrapper {
+    max-width: 250px;
+    right: -250px;
+  }
+
+  .ice-move-in {
+    right: 50% !important;
+    margin-right: -270px;
   }
 
 }
