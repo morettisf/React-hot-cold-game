@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 app.use([bodyParser.urlencoded({ extended: true }), bodyParser.json()]);
 app.use(express.static('src'));
 
-let fewestGuesses = 8;
+let fewestGuesses = 10;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
