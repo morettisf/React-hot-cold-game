@@ -3,6 +3,7 @@ html, body {
   font-family: verdana;
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 #container {
@@ -99,7 +100,7 @@ form {
   position: relative;
   animation: shake .1s linear;
   animation-iteration-count: 3;
-  transform: scale(1.3);
+  transform: scale(1.8);
   transition: all .2s linear;
 }
 
@@ -107,7 +108,7 @@ form {
   0% {transform: rotate(15deg);}
   25% {top: -2px;}
   50% {transform: rotate(-25deg);}
-  100% { bottom: -2px;}
+  100% {bottom: -2px;}
 }
 
 img {
@@ -165,12 +166,17 @@ h1, h2 {
 
 #reset {
   color: black;
-  margin-top: 10px;
-  height: 50px;
-  width: 150px;
+  height: 40px;
+  width: 100px;
   border-radius: 4px;
   background-color: white;
-  font-size: 1.2em;
+  font-size: 0.8em;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+#reset:hover {
+  cursor: pointer;
 }
 
 #game-container input {
