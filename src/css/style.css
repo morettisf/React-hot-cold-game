@@ -132,6 +132,7 @@ img {
 
 h1 {
   font-size: 1.7em;
+  margin-top: 2%;
 }
 
 h2 {
@@ -175,6 +176,7 @@ h1, h2 {
 #game-container input {
   -webkit-appearance: none;
   color: white;
+  padding: 0;
   width: 70px;
   height: 65px;
   font-size: 2.5em;

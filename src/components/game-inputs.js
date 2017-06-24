@@ -22,7 +22,7 @@ export class GameInput extends Component {
     return (
       <form onSubmit={this.onFormSubmit} >
         <input name='number'
-          type='text'
+          type='tel'
           placeholder='#' />
         <button id='submit' type='submit'>Submit</button>
       </form>
