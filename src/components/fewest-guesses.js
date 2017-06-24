@@ -11,9 +11,19 @@ class FewestGuesses extends Component {
     this.props.guessNum();
   }
 
+  fewest(number) {
+    if (!number) {
+      return  <i className="fa slow-spin fa-spinner" aria-hidden="true"></i>
+    }
+
+    else {
+      return number
+    }
+  }
+
   render() {
     return (
-      <div id='fewest-guess'>Fewest Guesses: {this.props.fewest}</div>
+      <div id='fewest-guess'>Fewest Guesses: {this.fewest(this.props.fewest)}</div>
     )
   }
 }

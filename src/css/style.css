@@ -221,6 +221,10 @@ h1, h2 {
   transform: scale(1) !important;
 }
 
+.slow-spin {
+  animation: fa-spin 5s infinite linear;
+}
+
 @media (min-width: 768px) {
 
   h1 {

@@ -42,7 +42,7 @@ let initialState = {
   counter: 0,
   message: '',
   correct: false,
-  fewest: 'Loading...'
+  fewest: null
 }
 
 export default function(state, action) {
