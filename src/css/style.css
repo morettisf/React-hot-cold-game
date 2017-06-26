@@ -12,7 +12,7 @@ html, body {
 
 #app {
   min-height: 100vh;
-  transition: background-color .6s ease .3s;
+  transition: all .6s ease .3s;
 }
 
 #game {
@@ -35,14 +35,13 @@ html, body {
   background-color: #f94b38;
 }
 
-.snow {
+.cold {
   background-color: deepskyblue;
+}
+
+.snow {
   background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
-  z-index: 1;
   animation: snow 10s linear infinite;
 }
 

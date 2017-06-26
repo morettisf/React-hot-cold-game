@@ -29,7 +29,6 @@ class FewestGuesses extends Component {
 }
 
 function mapStateToProps(state, props) {
-
   return {
     fewest: state.fewest
   };

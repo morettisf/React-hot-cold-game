@@ -26,7 +26,7 @@ class App extends Component {
     }
 
     else if (message === 'Cold!') {
-      return 'snow';
+      return 'cold snow';
     }
 
     else if (message === 'You win!') {

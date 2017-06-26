@@ -118,6 +118,8 @@ export default function(state, action) {
       action.payload
         .then((res) => {
           let fewest = res.data.fewestGuesses;
+          console.log(fewest)
+
           return Object.assign(state, { fewest: fewest });
         })
   }
