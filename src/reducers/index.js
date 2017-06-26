@@ -16,6 +16,7 @@ let initialState = {
 
 export default function(state, action) {
   state = state || initialState;
+  console.log(action.type)
 
   switch (action.type) {
     case GUESS_NUMBER:
@@ -71,13 +72,8 @@ export default function(state, action) {
       }
 
     case GET_FEWEST_GUESSES:
-      action.payload
-        .then((res) => {
-          let fewest = res.data.fewestGuesses;
-          console.log(fewest)
-
-          return Object.assign(state, { fewest: fewest });
-        })
+      let fewest = action.payload.data.fewestGuesses;
+      return Object.assign({}, state, { fewest: fewest });
   }
 
   return state;

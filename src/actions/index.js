@@ -20,7 +20,7 @@ const GET_FEWEST_GUESSES = 'GET_FEWEST_GUESSES';
 
 export function guessNum (guessNum) {
   const url = '/fewest-guesses';
-  let request = axios.get(url)
+  let request = axios.get(url);
     return {
       type: GET_FEWEST_GUESSES,
       payload: request
