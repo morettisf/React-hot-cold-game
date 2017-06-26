@@ -40,13 +40,13 @@ class FireAndIce extends Component {
 
   animate2() {
     this.setState({ 
-      fireAnimate: 'fire-move-in bounce-right'
+      fireAnimate: 'fire-move-in bounce-right-once'
     });
   }
 
   animate3() {
     this.setState({ 
-      iceAnimate: 'ice-move-in bounce-left'
+      iceAnimate: 'ice-move-in bounce-left-once'
     });
 
     setTimeout(() => {

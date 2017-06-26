@@ -13,12 +13,20 @@ class App extends Component {
       return '';
     }
 
-    else if (message === 'Hot!' || message === 'Warm!' || message === 'Luke Warm...') {
+    else if (message === 'Hot!') {
       return 'hot';
     }
 
+    else if (message === 'Warm!') {
+      return 'warm';
+    }
+
+    else if (message === 'Luke Warm...') {
+      return 'luke-warm';
+    }
+
     else if (message === 'Cold!') {
-      return 'cold';
+      return 'snow';
     }
 
     else if (message === 'You win!') {

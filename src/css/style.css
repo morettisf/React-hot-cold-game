@@ -3,17 +3,16 @@ html, body {
   font-family: verdana;
   margin: 0;
   height: 100%;
-  overflow: hidden;
 }
 
 #container {
   background: linear-gradient(to bottom right, #ff6666 30%, deepskyblue);
-  min-height: 100%;
+  overflow: hidden;
 }
 
 #app {
   min-height: 100vh;
-  transition: background .6s ease .3s;
+  transition: background-color .6s ease .3s;
 }
 
 #game {
@@ -24,13 +23,35 @@ html, body {
   padding-right: 20px;
 }
 
-.hot {
-  background: #ff6666 !important;
+.luke-warm {
+  background-color: #fa8a69;
 }
 
-.cold {
-  background: deepskyblue !important;
+.warm {
+  background-color: #ff6666;
 }
+
+.hot {
+  background-color: #f94b38;
+}
+
+.snow {
+  background-color: deepskyblue;
+  background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
 
 form {
   vertical-align: middle;
@@ -68,6 +89,19 @@ form {
   margin-right: -22%;
 }
 
+.bounce-right-once {
+  animation-name: bounceROnce;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounceROnce {
+  0% {transform: translateY(0) rotate(18deg); animation-timing-function: ease-in;} 
+  80% {transform: translateY(10px);}
+  99% {transform: translateY(-30px);}
+  100% {transform: translateY(0);} 
+} 
+
 .bounce-right {
   animation-name: bounceR;
   animation-duration: .5s;
@@ -78,7 +112,22 @@ form {
   0% {transform: translateY(0);} 
   20% {transform: rotate(18deg);}
   25% {transform: translateY(10px);}
-  80% {transform: translateY(-30px);}
+  50% {transform: translateY(-30px);}
+  60% {transform: translateY(0px);}
+  80% {transform: translateY(-10px);}
+  100% {transform: translateY(0);} 
+} 
+
+.bounce-left-once {
+  animation-name: bounceLOnce;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounceLOnce {
+  0% {transform: translateY(0) rotate(-18deg); animation-timing-function: ease-in;} 
+  80% {transform: translateY(10px);}
+  99% {transform: translateY(-30px);}
   100% {transform: translateY(0);} 
 } 
 
@@ -92,7 +141,41 @@ form {
   0% {transform: translateY(0);} 
   20% {transform: rotate(-18deg);}
   25% {transform: translateY(10px);}
-  80% {transform: translateY(-30px);}
+  50% {transform: translateY(-30px);}
+  60% {transform: translateY(0px);}
+  80% {transform: translateY(-10px);}
+  100% {transform: translateY(0);} 
+} 
+
+.bounce-happy-right {
+  animation-name: bounceHappyR;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounceHappyR {
+  0% {transform: translateY(0);} 
+  20% {transform: rotate(18deg);}
+  25% {transform: translateY(10px);}
+  50% {transform: translateY(-30px);}
+  60% {transform: translateY(0px);}
+  80% {transform: translateY(-10px);}
+  100% {transform: translateY(0);} 
+} 
+
+.bounce-happy-left {
+  animation-name: bounceHappyL;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounceHappyL {
+  0% {transform: translateY(0);} 
+  20% {transform: rotate(-18deg);}
+  25% {transform: translateY(10px);}
+  50% {transform: translateY(-30px);}
+  60% {transform: translateY(0px);}
+  80% {transform: translateY(-10px);}
   100% {transform: translateY(0);} 
 } 
 
@@ -100,7 +183,7 @@ form {
   position: relative;
   animation: shake .1s linear;
   animation-iteration-count: 3;
-  transform: scale(1.8);
+  transform: scale(2.5);
   transition: all .2s linear;
 }
 
@@ -115,20 +198,32 @@ img {
   width: 100%;
 }
 
+#header {
+  opacity: 0;
+  animation: scaleInHeader .5s ease-out 1.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scaleInHeader {
+  0% {transform: scale(0); opacity: 0;}
+  90% {transform: scale(1.2); opacity: .6;}
+  100% {transform: scale(1); opacity: 1;}
+}
+
 #game-container {
   margin: auto;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
   opacity: 0;
-  transform: scale(2);
-  transition: all .3s ease-out;
+  animation: scaleIn .5s ease-out 1.6s;
+  animation-fill-mode: forwards;
 }
 
-#header {
-  opacity: 0;
-  transform: scale(1.2);
-  transition: all .6s ease;
+@keyframes scaleIn {
+  0% {transform: scale(0); opacity: 0;}
+  90% {transform: scale(1.4); opacity: .6;}
+  100% {transform: scale(1); opacity: 1;}
 }
 
 h1 {
@@ -167,7 +262,7 @@ h1, h2 {
 #reset {
   color: black;
   height: 40px;
-  width: 100px;
+  width: 110px;
   border-radius: 4px;
   background-color: white;
   font-size: 0.8em;
@@ -220,11 +315,6 @@ h1, h2 {
   margin-bottom: 25px;
   margin-top: 25px;
   text-shadow: 2px 2px #000000;
-}
-
-.show {
-  opacity: 1 !important;
-  transform: scale(1) !important;
 }
 
 .slow-spin {

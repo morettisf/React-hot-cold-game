@@ -5,27 +5,9 @@ import GameResults from './game-results';
 
 export default class GameContainer extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = { show: '' };
-  }
-
-  componentWillMount() {
-
-    setTimeout(() => {
-      this.show();
-    }, this.props.wait);
-
-  }
-
-  show() {
-    this.setState({ show: 'show' });
-  }
-
   render() {
     return (
-      <div id='game-container' className={this.state.show} >
+      <div id='game-container'>
         <GameInputs />
         <GameResults />
       </div>

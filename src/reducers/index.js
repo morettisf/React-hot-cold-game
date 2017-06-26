@@ -25,12 +25,25 @@ function bounce(character) {
     }, 1000)
   }
 
-  else {
+  else if (character === 'ice') {
     ice.classList.add('bounce-left');
 
     setTimeout(() => {
       ice.classList.remove('bounce-left');
     }, 1000)
+  }
+
+  else if (character === 'both') {
+    fire.classList.add('bounce-happy-right');
+
+    setTimeout(() => {
+      ice.classList.add('bounce-happy-left');
+    }, 500)
+  }
+
+  else {
+    fire.classList.remove('bounce-happy-right');
+    ice.classList.remove('bounce-happy-left');
   }
 
 }
@@ -55,6 +68,7 @@ export default function(state, action) {
 
       // logic for providing hot/cold message based on input number
       if (guessNum === state.randomNum) {
+        bounce('both');
         return Object.assign({}, state, { correct: true, message: 'You win!', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
@@ -73,7 +87,18 @@ export default function(state, action) {
         return Object.assign({}, state, { correct: false, message: 'Luke Warm...', counter: state.counter + 1, guesses: state.guesses.concat(action.number) });
       }
 
+      else if (guessNum < 1) {
+        bounce('none');
+        return Object.assign({}, state, { correct: false, message: 'Above 1...' });
+      }
+
+      else if (guessNum > 100) {
+        bounce('none');
+        return Object.assign({}, state, { correct: false, message: 'Below 100...' });
+      }
+
       else if (isNaN(guessNum)) {
+        bounce('none');
         return Object.assign({}, state, { correct: false, message: 'Try a number...' });
       }
 
@@ -85,7 +110,8 @@ export default function(state, action) {
     case NEW_GAME:
 
       if (action.newGame === true) {
-        return Object.assign({}, state, { randomNum: Math.floor(Math.random() * 100) + 1, guesses: [], counter: 0, message: '', correct: false, fewest: null });
+        bounce('none');
+        return Object.assign({}, state, { randomNum: Math.floor(Math.random() * 100) + 1, guesses: [], counter: 0, message: '', correct: false });
       }
 
     case GET_FEWEST_GUESSES:

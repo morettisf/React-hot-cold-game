@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { newGame } from '../actions/index';
 import { bindActionCreators } from 'redux';
 import FewestGuesses from './fewest-guesses';
+import { guessNum } from '../actions/index';
 import axios from 'axios';
 
 class GameResults extends Component {
@@ -16,6 +17,7 @@ class GameResults extends Component {
   resetAll(event) {
     event.preventDefault();
     this.props.newGame(true)
+    this.props.guessNum();
   }
 
   postCount(count) {
@@ -72,7 +74,7 @@ function mapStateToProps(state, props) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ newGame }, dispatch);
+  return bindActionCreators({ newGame, guessNum }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameResults);
