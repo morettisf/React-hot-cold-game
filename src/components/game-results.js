@@ -17,7 +17,8 @@ class GameResults extends Component {
   resetAll(event) {
     event.preventDefault();
     this.props.newGame(true)
-    this.props.guessNum();
+    let fewestGuess = document.querySelector('#fewest-guess');
+    fewestGuess.classList.remove('fewest');
   }
 
   postCount(count) {
@@ -39,6 +40,9 @@ class GameResults extends Component {
 
       if (this.props.counter < this.props.fewest) {
         this.postCount(this.props.counter)
+        this.props.guessNum();
+        let fewestGuess = document.querySelector('#fewest-guess');
+        fewestGuess.classList.add('fewest');
       }
 
       resetGame = <button id='reset' onClick={this.resetAll}>Reset Game</button>
@@ -63,7 +67,6 @@ class GameResults extends Component {
 }
 
 function mapStateToProps(state, props) {
-
   return {
     counter: state.counter,
     guesses: state.guesses,

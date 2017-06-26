@@ -16,7 +16,6 @@ let initialState = {
 
 export default function(state, action) {
   state = state || initialState;
-  console.log(action.type)
 
   switch (action.type) {
     case GUESS_NUMBER:
