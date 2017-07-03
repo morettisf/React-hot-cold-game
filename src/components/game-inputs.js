@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { guessNumber } from '../actions/index';
+import Scroll from 'react-scroll';
+const scroll = Scroll.animateScroll;
 
 export class GameInput extends Component {
 
@@ -18,13 +20,17 @@ export class GameInput extends Component {
     event.target.number.value = '';
   }
 
+  scrollToTop() {
+    scroll.scrollToTop({duration: 100});
+  }
+
   render() {
     return (
       <form onSubmit={this.onFormSubmit} >
         <input name='number'
           type='tel'
           placeholder='#' />
-        <button id='submit' type='submit'>Submit</button>
+        <button id='submit' type='submit' onClick={this.scrollToTop}>Submit</button>
       </form>
     );
   }

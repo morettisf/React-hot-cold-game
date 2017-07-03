@@ -12,7 +12,7 @@ html, body {
 
 #app {
   min-height: 100vh;
-  transition: all .6s ease .3s;
+  transition: background .6s ease .3s;
 }
 
 #game {
