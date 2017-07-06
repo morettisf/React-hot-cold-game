@@ -2,6 +2,9 @@ require('babel-register')();
 
 var jsdom = require('jsdom').jsdom;
 
+// const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdom;
+
 var exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
@@ -17,4 +20,4 @@ global.navigator = {
   userAgent: 'node.js'
 };
 
-documentRef = document;
+// documentRef = document;

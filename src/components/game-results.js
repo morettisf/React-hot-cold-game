@@ -6,7 +6,7 @@ import FewestGuesses from './fewest-guesses';
 import { guessNum } from '../actions/index';
 import axios from 'axios';
 
-class GameResults extends Component {
+export class GameResults extends Component {
 
   constructor(props) {
     super(props);

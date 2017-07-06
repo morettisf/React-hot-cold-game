@@ -5,7 +5,7 @@ import FireAndIce from './fire-ice';
 import Header from './header';
 import GameContainer from './game-container';
 
-class App extends Component {
+export class App extends Component {
 
   background(message) {
 

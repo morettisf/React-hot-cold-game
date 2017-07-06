@@ -5,7 +5,7 @@ import { POST_FEWEST_GUESSES } from '../actions/index';
 import bounce from '../components/bounce';
 import React, { Component } from 'react';
 
-let initialState = {
+export const initialState = {
   randomNum: Math.floor(Math.random() * 100) + 1,
   guesses: [],
   counter: 0,
@@ -14,7 +14,7 @@ let initialState = {
   fewest: null
 }
 
-export default function(state, action) {
+export default function reducer(state, action) {
   state = state || initialState;
 
   switch (action.type) {

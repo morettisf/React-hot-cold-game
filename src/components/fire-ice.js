@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class FireAndIce extends Component {
+export class FireAndIce extends Component {
 
   constructor(props) {
     super(props);
