@@ -1,6 +1,9 @@
 {
   "name": "Hot-Cold-Game",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.11.1"
+  },
   "description": "Game built with React and Redux",
   "main": "index.js",
   "scripts": {
