@@ -1,5 +1,5 @@
 # Hot Cold Game
-React & Redux project
+React w/ Redux Guessing Game App
 
 ## Live Site
 http://hot-cold-game.herokuapp.com/
